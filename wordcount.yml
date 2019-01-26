@@ -2,7 +2,7 @@ provider:
   name: faas
   gateway: http://127.0.0.1:31112
 functions:
-  wordcloud:
+  wordcount:
     lang: python3-flask
-    handler: ./wordcloud
-    image: wordcloud:latest
+    handler: ./wordcount
+    image: wordcount:latest

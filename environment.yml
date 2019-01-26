@@ -1,4 +1,4 @@
-name: faaswordcloud
+name: faaswordcount
 channels:
   - conda-forge
   - defaults
@@ -48,5 +48,3 @@ dependencies:
   - greenlet=0.4.15=py37h1de35cc_0
   - openssl=1.1.1a=h1de35cc_0
   - python=3.7.2=haf84260_0
-prefix: /Users/lucasroesler/miniconda3/envs/multifilefaas
-

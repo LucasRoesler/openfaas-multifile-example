@@ -1,5 +1,5 @@
 import json
-from .wordcloud import process_text
+from .wordcount import process_text
 
 
 def handle(req):
