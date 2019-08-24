@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Login to Docker Hub
+      uses: actions/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     - uses: LucasRoesler/openfaas-action/template_store_pull@master
       name: Fetch Template
       with:
@@ -15,3 +20,11 @@ jobs:
       name: Build
       with:
         path: "wordcount.yml"
+        tag: "sha"
+    - uses: LucasRoesler/openfaas-action/push@master
+      name: Push image
+      if: "success() && github.ref == 'refs/heads/master' "
+      with:
+        path: "wordcount.yml"
+        tag: "sha"
+

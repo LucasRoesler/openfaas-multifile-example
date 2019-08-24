@@ -5,4 +5,4 @@ functions:
   wordcount:
     lang: python3-flask
     handler: ./wordcount
-    image: wordcount:latest
+    image: theaxer/wordcount:latest
