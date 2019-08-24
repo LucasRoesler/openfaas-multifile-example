@@ -23,6 +23,7 @@ jobs:
         tag: "sha"
     - uses: LucasRoesler/openfaas-action/push@master
       name: Push image
+      if: "success() && github.ref == 'refs/heads/master' "
       with:
         path: "wordcount.yml"
         tag: "sha"
